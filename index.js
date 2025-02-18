@@ -1,0 +1,12 @@
+require("dotenv").config()
+const express = require('express');
+const app = express();
+const productRouter = require("./router/product-router")
+
+app.use(express.json())
+app.use('/api',productRouter)
+
+const PORT = process.env.PORT
+app.listen(PORT, ()=>{
+    console.log(`Server started on port ${PORT}`)
+})
