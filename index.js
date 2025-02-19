@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const productRouter = require("./router/product-router")
 
+app.use(cors());
+
 app.use(express.json())
 app.use('/api',productRouter)
 
